@@ -10,6 +10,8 @@ import { TextSimilarityComponent } from './components/text-similarity/text-simil
 import { LanguageDetectionComponent } from './components/language-detection/language-detection.component';
 import { SentimentAnalysisComponent } from './components/sentiment-analysis/sentiment-analysis.component';
 import {RouterModule} from "@angular/router";
+import {HttpClientModule} from "@angular/common/http";
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import {RouterModule} from "@angular/router";
     FormsModule,
     RouterModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

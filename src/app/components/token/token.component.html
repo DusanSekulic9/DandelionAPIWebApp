@@ -1,23 +1,7 @@
 <div class="center">
   <form [formGroup]="tokenForm" class="col-sm-12" (submit)="addToken()">
     <label for="token" class="text">Your token:</label>
-    <input [formControlName]="'token'"  type="text" class="col-sm-8 custom" placeholder="Paste your token here..">
-
-    <!--  <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>-->
-    <!--  <div class="input-group mb-2 mr-sm-2">-->
-    <!--    <div class="input-group-prepend">-->
-    <!--      <div class="input-group-text">@</div>-->
-    <!--    </div>-->
-    <!--    <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Username">-->
-    <!--  </div>-->
-
-    <!--  <div class="form-check mb-2 mr-sm-2">-->
-    <!--    <input class="form-check-input" type="checkbox" id="inlineFormCheck">-->
-    <!--    <label class="form-check-label" for="inlineFormCheck">-->
-    <!--      Remember me-->
-    <!--    </label>-->
-    <!--  </div>-->
-
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <input type="text" class="col-sm-8 custom" placeholder="Paste your token here.." [formControlName]="'token'">
+    <button [disabled]="!tokenForm.valid" type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>

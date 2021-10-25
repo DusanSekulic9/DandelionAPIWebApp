@@ -1,1 +1,27 @@
-<p>sentiment-analysis works!</p>
+<div class="center">
+  <form [formGroup]="sentForm" class="col-sm-12" (submit)="sendReq()">
+    <div class="mt-3">
+      <label for="lang">Language:</label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="lang" for="lang" value="en" [formControlName]="'lang'">
+          english
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="lang" for="lang" value="it" [formControlName]="'lang'">
+          italian
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="lang" for="lang" value="auto" [formControlName]="'lang'">
+        detect
+      </div>
+    </div>
+    <label for="text">Text to be analysed</label>
+    <input type="text" class="col-sm-8 custom" placeholder="Paste your token here.." [formControlName]="'text'">
+    <button [disabled]="!sentForm.valid" type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+  <div [style]="{color: primaryColor}">
+    <p>Score: {{ this.score }}</p>
+    <p>{{ this.type }}</p>
+  </div>
+</div>

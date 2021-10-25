@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Token} from "../../model";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute} from "@angular/router";
 
@@ -14,7 +13,7 @@ export class TokenComponent implements OnInit {
     this.tokenForm = this.formBuilder.group({
       // Odgovarajuce HTML elemente cemo povezati atributom formControlName="..."
       // ['default value', [validators]
-      token: ['', Validators.required]
+      token: ['',[Validators.required, Validators.minLength(4)]]
     })
   }
 
@@ -25,8 +24,12 @@ export class TokenComponent implements OnInit {
 
   addToken(){
     let token = this.tokenForm.get('token')?.value;
-    localStorage.setItem("token", token);
-    this.tokenForm.reset();
+    if(token != null) {
+      localStorage.setItem("token", token);
+      this.tokenForm.reset();
+    }else{
+      localStorage.setItem("notToken", "Test");
+    }
   }
 
 }
