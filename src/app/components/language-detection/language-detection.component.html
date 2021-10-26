@@ -1,1 +1,11 @@
-<p>language-detection works!</p>
+<div class="center">
+  <form [formGroup]="liForm" class="col-sm-12 text" (submit)="sendReq()">
+    <label for="text" class="text">Text:</label>
+    <input type="text" class="col-sm-9 custom" placeholder="Your language is..." [formControlName]="'text'">
+    <input for="clean" class="" type="checkbox" [formControlName]="'clean'">clean
+    <button [disabled]="!liForm.valid" type="submit" class="btn btn-primary custom">Submit</button>
+  </form>
+  <div *ngFor="let lang of detectedLangs; let i = index;" class="mb-2">
+    <p class="text">{{ i + 1 }}. {{ lang.lang }}  {{ lang.confidence }}</p>
+  </div>
+</div>

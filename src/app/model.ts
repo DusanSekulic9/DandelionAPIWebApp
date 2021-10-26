@@ -17,3 +17,15 @@ export class Color{
     public blue: number) { }
 }
 
+export interface Lang{
+  lang: string,
+  confidence: number
+}
+
+export interface liResponse{
+  detectedLangs: Lang[]
+}
+
+export interface simResponse{
+  similarity: number;
+}

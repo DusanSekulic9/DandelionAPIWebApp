@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {SentimentAnalysisService} from "../../services/sentiment-analysis.service";
+import {BackendService} from "../../services/backend.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Color, sentResponse} from "../../model";
 import {HistoryService} from "../../services/history.service";
@@ -22,7 +22,7 @@ export class SentimentAnalysisComponent implements OnInit {
   green: Color = new Color(0,255,0);
   brown: Color = new Color(150,75,0);
 
-  constructor(private sentService: SentimentAnalysisService, private formBuilder: FormBuilder, private histService: HistoryService) {
+  constructor(private sentService: BackendService, private formBuilder: FormBuilder) {
     this.sentForm = this.formBuilder.group({
       // Odgovarajuce HTML elemente cemo povezati atributom formControlName="..."
       // ['default value', [validators]
@@ -72,7 +72,7 @@ export class SentimentAnalysisComponent implements OnInit {
     let lang = this.sentForm.get('lang')?.value
     let text = this.sentForm.get('text')?.value
     if(token != null){
-      this.sentService.sendRequest(lang, text, token).subscribe((sentResponse) => {
+      this.sentService.sentRequest(lang, text, token).subscribe((sentResponse) => {
         this.sentResponse = sentResponse;
         this.score = sentResponse.sentiment.score;
         this.type = sentResponse.sentiment.type;

@@ -12,7 +12,6 @@ import { SentimentAnalysisComponent } from './components/sentiment-analysis/sent
 import {RouterModule} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
 import { HistoryComponent } from './components/history/history.component';
-import { DatePipe } from './pipes/date.pipe';
 
 
 
@@ -25,7 +24,6 @@ import { DatePipe } from './pipes/date.pipe';
     LanguageDetectionComponent,
     SentimentAnalysisComponent,
     HistoryComponent,
-    DatePipe
   ],
   imports: [
     BrowserModule,
