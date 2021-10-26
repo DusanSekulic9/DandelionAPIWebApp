@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {environment} from "../../environments/environment";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {liResponse, sentResponse, simResponse} from "../model";
+import {extResponse, liResponse, sentResponse, simResponse} from "../model";
 import {HistoryService} from "./history.service";
 
 @Injectable({
@@ -30,6 +30,13 @@ export class BackendService {
     let url: string = `${this.apiUrl}/sim/v1/?text1=${text1}&text2=${text2}&token=${token}`;
     this.historyService.addHistory("[" + new Date().toLocaleString('it') +"]" + " GET " + url);
     return this.httpClient.get<simResponse>(url);
+  }
+
+  extRequest(text: string, includes: string, confidence:number, token: string): Observable<extResponse>{
+    let url: string = `${this.apiUrl}/nex/v1/?lang=en&text=${text}&include=${includes}&min_confidence=${confidence}&token=${token}`;
+    console.log(url)
+    this.historyService.addHistory("[" + new Date().toLocaleString('it') +"]" + " GET " + url);
+    return this.httpClient.get<extResponse>(url);
   }
 
 }

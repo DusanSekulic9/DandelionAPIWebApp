@@ -29,3 +29,19 @@ export interface liResponse{
 export interface simResponse{
   similarity: number;
 }
+
+export interface Image{
+  full: string,
+  thumbnail: string,
+}
+
+export interface Annotation{
+  abstract: string,
+  image: Image,
+  categories: string[]
+
+}
+
+export interface extResponse{
+  annotations: Annotation[],
+}
