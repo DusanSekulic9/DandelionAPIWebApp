@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {SentimentAnalysisService} from "../../services/sentiment-analysis.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Color, sentResponse} from "../../model";
+import {HistoryService} from "../../services/history.service";
 
 
 @Component({
@@ -21,7 +22,7 @@ export class SentimentAnalysisComponent implements OnInit {
   green: Color = new Color(0,255,0);
   brown: Color = new Color(150,75,0);
 
-  constructor(private sentService: SentimentAnalysisService, private formBuilder: FormBuilder) {
+  constructor(private sentService: SentimentAnalysisService, private formBuilder: FormBuilder, private histService: HistoryService) {
     this.sentForm = this.formBuilder.group({
       // Odgovarajuce HTML elemente cemo povezati atributom formControlName="..."
       // ['default value', [validators]
@@ -81,7 +82,6 @@ export class SentimentAnalysisComponent implements OnInit {
           this.primaryColor = this.calculateInterpolation(this.brown, this.red, Math.abs(this.score));
         }
         this.hexPrimaryColor = this.calculateHex(this.primaryColor);
-
       })
     }
   }

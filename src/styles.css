@@ -8,3 +8,18 @@
 .text{
   color: white;
 }
+
+.custom{
+  margin: 15px;
+}
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid #FFFF00;
+  padding: 30px;
+  background-color: gray;
+}

@@ -11,6 +11,8 @@ import { LanguageDetectionComponent } from './components/language-detection/lang
 import { SentimentAnalysisComponent } from './components/sentiment-analysis/sentiment-analysis.component';
 import {RouterModule} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
+import { HistoryComponent } from './components/history/history.component';
+import { DatePipe } from './pipes/date.pipe';
 
 
 
@@ -21,7 +23,9 @@ import {HttpClientModule} from "@angular/common/http";
     TokenComponent,
     TextSimilarityComponent,
     LanguageDetectionComponent,
-    SentimentAnalysisComponent
+    SentimentAnalysisComponent,
+    HistoryComponent,
+    DatePipe
   ],
   imports: [
     BrowserModule,

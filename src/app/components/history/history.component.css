@@ -1,0 +1,11 @@
+.history {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 65%;
+  transform: translate(-50%, -50%);
+  border: 2px solid #FFFF00;
+  padding: 30px;
+  background-color: gray;
+  text-align: center;
+}

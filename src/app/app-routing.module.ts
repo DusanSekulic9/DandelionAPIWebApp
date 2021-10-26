@@ -6,6 +6,7 @@ import {TextSimilarityComponent} from "./components/text-similarity/text-similar
 import {LanguageDetectionComponent} from "./components/language-detection/language-detection.component";
 import {SentimentAnalysisComponent} from "./components/sentiment-analysis/sentiment-analysis.component";
 import {TokenAuthGuard} from "./token-auth.guard";
+import {HistoryComponent} from "./components/history/history.component";
 
 const routes: Routes = [
   {
@@ -30,6 +31,11 @@ const routes: Routes = [
   {
     path: "sentimentAnalysis",
     component: SentimentAnalysisComponent,
+    canActivate: [TokenAuthGuard]
+  },
+  {
+    path: "history",
+    component: HistoryComponent,
     canActivate: [TokenAuthGuard]
   },
 ];

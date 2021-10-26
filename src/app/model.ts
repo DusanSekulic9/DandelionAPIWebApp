@@ -16,3 +16,4 @@ export class Color{
     public green: number,
     public blue: number) { }
 }
+
