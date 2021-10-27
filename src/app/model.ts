@@ -38,7 +38,8 @@ export interface Image{
 export interface Annotation{
   abstract: string,
   image: Image,
-  categories: string[]
+  categories: string[],
+  spot: string,
 
 }
 

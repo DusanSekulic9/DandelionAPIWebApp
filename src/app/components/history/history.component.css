@@ -3,6 +3,7 @@
   left: 50%;
   top: 50%;
   width: 65%;
+  height: 80%;
   transform: translate(-50%, -50%);
   border: 2px solid #FFFF00;
   padding: 30px;

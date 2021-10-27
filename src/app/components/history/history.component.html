@@ -1,6 +1,6 @@
-<div class="text history">
+<div class="text history overflow-auto">
+  <h4 class="center" *ngIf="history.length === 0">No history.</h4>
   <div *ngFor="let hist of history; let i = index;" class="mb-2">
     <p>{{i + 1}}. {{hist}}<br></p>
-<!--    <p>{{ post.body }}</p>-->
   </div>
 </div>

@@ -1,12 +1,12 @@
 <div class="center text">
   <form [formGroup]="simForm" class="col-sm-12 text" (submit)="sendReq()">
+    <label for="text1" class="text">Text 1</label>
     <div>
-      <label for="text1" class="text">Text 1</label>
-      <input type="text" class="col-sm-9 custom" placeholder="Your first text" [formControlName]="'text1'">
+      <textarea rows="5" type="text" class="col-sm-9 custom" placeholder="Your first text" [formControlName]="'text1'"></textarea>
     </div>
-    <div>
     <label for="text2" class="text">Text 2</label>
-    <input type="text" class="col-sm-9 custom" placeholder="Your second text"[formControlName]="'text2'">
+    <div>
+    <textarea rows="5" type="text" class="col-sm-9 custom" placeholder="Your second text"[formControlName]="'text2'"></textarea>
     </div>
     <button [disabled]="!simForm.valid" type="submit" class="btn btn-primary custom">Submit</button>
     <div>

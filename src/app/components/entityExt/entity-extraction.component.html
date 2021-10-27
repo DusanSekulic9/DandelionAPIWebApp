@@ -1,4 +1,4 @@
-<div class="center text">
+<div class="center text overflow-auto" style="height: 80%">
   <form [formGroup]="extForm" class="col-sm-12" (submit)="sendReq()">
     <div class="mt-3">
       <div class="form-check">
@@ -19,8 +19,12 @@
     <input type="range" class="form-range" min="0" max="1" step="0.1" id="slider" [formControlName]="'confidence'">
     <button [disabled]="!extForm.valid" type="submit" class="btn btn-primary">Submit</button>
   </form>
-  <div *ngFor="let annotation of annotations;" class="mb-2">
-<!--    <p class="text">{{ annotation }}  {{  }}</p>-->
+  <br>
+  <div *ngFor="let annotation of annotations;" class="mb-2 text">
+    <h4>{{ annotation.spot }}</h4>
+    <img [src]="annotation.image?.thumbnail">
+    <p>{{ annotation.abstract }}</p>
+    <p>{{ annotation.categories }}</p>
   </div>
 
 </div>
