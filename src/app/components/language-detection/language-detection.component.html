@@ -6,6 +6,6 @@
     <button [disabled]="!liForm.valid" type="submit" class="btn btn-primary custom">Submit</button>
   </form>
   <div *ngFor="let lang of detectedLangs; let i = index;" class="mb-2">
-    <p class="text">{{ i + 1 }}. {{ lang.lang }}  {{ lang.confidence }}</p>
+    <p class="text">{{ i + 1 }}. {{ lang.lang }}  {{ lang.confidence * 100 }}%</p>
   </div>
 </div>
